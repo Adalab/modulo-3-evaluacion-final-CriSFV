@@ -12,26 +12,28 @@ function App() {
       setData(response);
     });
   }, []);
-  console.log(data);
-  const paintList = data.map((eachdata, i) => {
-    return (
-      <li className='list__character' key={i}>
-        <img
-          className='list__character__img'
-          src={eachdata.photo}
-          alt={eachdata.name}
-        />
-        <h4 className='list__character__name'>{eachdata.name}</h4>
-        <p className='list__character__rest'>{eachdata.species}</p>
-      </li>
-    );
-  });
+
+  const paintList = () => {
+    return data.map((eachData, index) => {
+      return (
+        <li className='list__character' key={index}>
+          <img
+            className='list__character__img'
+            src={eachData.photo}
+            alt={eachData.name}
+          />
+          <h4 className='list__character__name'>{eachData.name}</h4>
+          <p className='list__character__rest'>{eachData.species}</p>
+        </li>
+      );
+    });
+  };
 
   return (
     <div className='page'>
       <Header />
       <main>
-        <ul className='list'>{paintList}</ul>
+        <ul className='list'>{paintList()}</ul>
       </main>
     </div>
   );
