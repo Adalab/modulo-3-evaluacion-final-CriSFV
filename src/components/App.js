@@ -1,13 +1,21 @@
 import '../styles/App.scss';
-//import initialData from '../data/contacts.json';
+import { useEffect, useState } from 'react';
+import callToApi from '../services/api';
+import Header from './Header';
 
 function App() {
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    callToApi().then((response) => {
+      setData(response);
+    });
+  }, []);
+
   return (
     <div className='page'>
       {/* header */}
-      <header className='header'>
-        <h1 className='header__title'>Mi agenda de contactos</h1>
-      </header>
+      <Header />
     </div>
   );
 }
