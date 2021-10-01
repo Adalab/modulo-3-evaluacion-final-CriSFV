@@ -1,0 +1,21 @@
+@import '../styles/core/variables';
+.list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__character {
+    margin: 5px;
+    border: 1px solid $primeColor;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      margin: 5px;
+      width: 150px;
+      border-radius: 25px;
+    }
+  }
+}

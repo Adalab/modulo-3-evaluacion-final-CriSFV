@@ -1,14 +1,13 @@
+@import '../styles/core/variables';
 .header {
-  background-color: #262c3a;
+  background-color: $primeColor;
   text-align: center;
+  width: 100vw;
   &__img {
     width: 300px;
     height: 150px;
   }
   &__input {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
-  &__input:focus {
-    background-color: 262c3a;
-  } //no sé poque no me funciona
 }

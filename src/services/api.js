@@ -4,6 +4,7 @@ const callToApi = () => {
   ) //cambiar api a la buena
     .then((response) => response.json())
     .then((response) => {
+      console.log(response);
       return response.results.map((each) => {
         return {
           photo: each.image,
