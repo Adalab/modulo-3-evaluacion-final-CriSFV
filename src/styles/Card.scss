@@ -1,0 +1,13 @@
+@import '../styles/core/variables';
+
+.card {
+  display: flex;
+  //  justify-content: space-around;
+  background-color: $secondColor;
+  &__detail {
+    margin-left: 10px;
+  }
+  &__article {
+    margin: 20px;
+  }
+}

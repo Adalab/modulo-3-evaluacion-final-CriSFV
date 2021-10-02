@@ -4,19 +4,13 @@ import Cards from './Card';
 const List = (props) => {
   const printList = props.data.map((eachData, index) => {
     return (
-      <li className='list__character' key={index} id={eachData.id}>
-        <Cards
-          photo={eachData.photo}
-          name={eachData.name}
-          species={eachData.species}
-        />
-      </li>
+      <Cards eachData={eachData} key={index} userClick={props.userClick} />
     );
   });
 
   return (
     <>
-      <ul className='list'>{printList}</ul>;
+      <ul className='list'>{printList}</ul>
     </>
   );
 };

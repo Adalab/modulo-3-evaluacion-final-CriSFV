@@ -1,13 +1,22 @@
 const Cards = (props) => {
+  const handleCharacterClick = (ev) => {
+    props.userClick(parseInt(ev.currentTarget.id));
+  };
   return (
     <>
-      <img
-        className='list__character__img'
-        src={props.photo}
-        alt={props.name}
-      />
-      <h4 className='list__character__name'>{props.name}</h4>
-      <p className='list__character__rest'>{props.species}</p>
+      <li
+        className='list__character'
+        onClick={handleCharacterClick}
+        id={props.eachData.id}
+      >
+        <img
+          className='list__character__img'
+          src={props.eachData.photo}
+          alt={props.eachData.name}
+        />
+        <h4 className='list__character__name'>{props.eachData.name}</h4>
+        <p className='list__character__rest'>{props.eachData.species}</p>
+      </li>
     </>
   );
 };
