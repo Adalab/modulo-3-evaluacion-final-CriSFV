@@ -1,12 +1,18 @@
 @import '../styles/core/variables';
+
+.main {
+}
+
 .list {
+  background-color: $thirdColor;
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
   &__character {
-    margin: 5px;
-    border: 1px solid $primeColor;
+    background-color: $secondColor;
+    margin: 3px;
+    border: 2px solid $primeColor;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -14,7 +20,7 @@
     align-items: center;
     &__img {
       margin: 5px;
-      width: 150px;
+      width: 125px;
       border-radius: 25px;
     }
   }

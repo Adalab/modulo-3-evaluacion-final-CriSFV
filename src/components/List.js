@@ -15,7 +15,11 @@ const List = (props) => {
     );
   });
 
-  return <ul className='list'>{printList}</ul>;
+  return (
+    <>
+      <ul className='list'>{printList}</ul>;
+    </>
+  );
 };
 
 export default List;

@@ -22,7 +22,7 @@ function App() {
     setUserSearch(value);
   };
 
-  const filteredData = data.filter((eachCharacter) =>
+  const filteredList = data.filter((eachCharacter) =>
     eachCharacter.name
       .toLocaleLowerCase()
       .includes(userSearch.toLocaleLowerCase())
@@ -31,8 +31,8 @@ function App() {
   return (
     <div>
       <Header handleSearch={handleSearch} dataSearch={userSearch} />
-      <main>
-        <List data={filteredData} userSearch={userSearch} />
+      <main className='main'>
+        <List data={filteredList} userSearch={userSearch} />
       </main>
     </div>
   );
