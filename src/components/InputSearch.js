@@ -1,6 +1,6 @@
 const InputSearch = (props) => {
   const inputValue = (ev) => {
-    props.handleSearch(ev.target.value);
+    props.handleSearch(ev.currentTarget.value);
   };
 
   return (
@@ -8,7 +8,7 @@ const InputSearch = (props) => {
       type='text'
       className='header__input'
       placeholder='busca aquí tu personaje'
-      value={props.dataSearch}
+      value={props.userSearch}
       onChange={inputValue}
     />
   );

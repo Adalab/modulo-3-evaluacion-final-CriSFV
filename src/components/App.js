@@ -7,7 +7,7 @@ import List from './List';
 
 function App() {
   const [data, setData] = useState([]);
-  const [dataSearch, setDataSearch] = useState('');
+  const [userSearch, setUserSearch] = useState('');
 
   useEffect(() => {
     initialData().then((response) => {
@@ -19,14 +19,20 @@ function App() {
 
   const handleSearch = (value) => {
     console.log(value);
-    setDataSearch(value);
+    setUserSearch(value);
   };
+
+  const filteredData = data.filter((eachCharacter) =>
+    eachCharacter.name
+      .toLocaleLowerCase()
+      .includes(userSearch.toLocaleLowerCase())
+  );
 
   return (
     <div>
-      <Header handleSearch={handleSearch} dataSearch={dataSearch} />
+      <Header handleSearch={handleSearch} dataSearch={userSearch} />
       <main>
-        <List data={data} />
+        <List data={filteredData} userSearch={userSearch} />
       </main>
     </div>
   );

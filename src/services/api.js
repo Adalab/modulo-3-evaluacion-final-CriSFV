@@ -11,6 +11,9 @@ const callToApi = () => {
           photo: character.image,
           species: character.species,
           id: character.id,
+          origin: character.location.name,
+          episodes: character.episode.length,
+          status: character.status,
         };
       });
     });

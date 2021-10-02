@@ -12,7 +12,7 @@ const Header = (props) => {
       <form onSubmit={hanlePrevent}>
         <InputSearch
           handleSearch={props.handleSearch}
-          dataSearch={props.dataSearch}
+          userSearch={props.userSearch}
         />
       </form>
     </header>
