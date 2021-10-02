@@ -1,18 +1,19 @@
 @import '../styles/core/variables';
-
 .main {
 }
-
 .list {
   background-color: $thirdColor;
+  padding: 10px;
   list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   &__character {
+    padding: 10px;
     background-color: $secondColor;
-    margin: 3px;
-    border: 2px solid $primeColor;
+    margin: 5px;
+    border: 3px solid $primeColor;
     border-radius: 15px;
     display: flex;
     flex-direction: column;

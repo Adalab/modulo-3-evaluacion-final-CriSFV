@@ -1,6 +1,6 @@
 import '../styles/Header.scss';
 import logo from '../images/logo.png';
-import InputSearch from './InputSearch';
+import FilterName from './FilterName';
 
 const Header = (props) => {
   const hanlePrevent = (ev) => {
@@ -10,7 +10,7 @@ const Header = (props) => {
     <header className='header'>
       <img src={logo} alt='Rick and Morty' className='header__img' />
       <form onSubmit={hanlePrevent}>
-        <InputSearch
+        <FilterName
           handleSearch={props.handleSearch}
           userSearch={props.userSearch}
         />

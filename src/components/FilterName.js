@@ -1,4 +1,4 @@
-const InputSearch = (props) => {
+const FilterName = (props) => {
   const inputValue = (ev) => {
     props.handleSearch(ev.currentTarget.value);
   };
@@ -13,4 +13,4 @@ const InputSearch = (props) => {
     />
   );
 };
-export default InputSearch;
+export default FilterName;

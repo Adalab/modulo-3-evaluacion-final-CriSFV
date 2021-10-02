@@ -15,10 +15,7 @@ function App() {
     });
   }, []);
 
-  console.log(data);
-
   const handleSearch = (value) => {
-    console.log(value);
     setUserSearch(value);
   };
 
