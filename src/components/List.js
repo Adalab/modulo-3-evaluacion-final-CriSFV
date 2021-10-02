@@ -2,9 +2,11 @@ import '../styles/List.scss';
 import Cards from './Card';
 
 const List = (props) => {
-  const printList = props.data.map((eachData, index) => {
+  const printList = props.data.map((eachData) => {
     return (
-      <Cards eachData={eachData} key={index} userClick={props.userClick} />
+      <li className='list__character' key={eachData.id}>
+        <Cards eachData={eachData} />
+      </li>
     );
   });
 

@@ -1,22 +1,16 @@
+import { Link } from 'react-router-dom';
 const Cards = (props) => {
-  const handleCharacterClick = (ev) => {
-    props.userClick(parseInt(ev.currentTarget.id));
-  };
   return (
     <>
-      <li
-        className='list__character'
-        onClick={handleCharacterClick}
-        id={props.eachData.id}
-      >
+      <Link to={`/card/${props.eachData.id}`} className='character'>
         <img
           className='list__character__img'
           src={props.eachData.photo}
           alt={props.eachData.name}
         />
-        <h4 className='list__character__name'>{props.eachData.name}</h4>
-        <p className='list__character__rest'>{props.eachData.species}</p>
-      </li>
+        <h4 className='list__character__name '>{props.eachData.name}</h4>
+        <p className='list__character__rest '>{props.eachData.species}</p>
+      </Link>
     </>
   );
 };

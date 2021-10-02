@@ -21,15 +21,12 @@ function App() {
   const handleSearch = (value) => {
     setUserSearch(value);
   };
-  // quiero que me encuentres el que tenga el mismo id que el que ha seleccionado la usuaria
-  const userClick = (id) => {
-    const characterClicked = data.find((each) => id === each.id);
-    // console.log(characterClicked);
-    setUserClickCharacter(characterClicked);
-  };
 
-  const routeData = useRouteMatch('/character/:id');
-  console.log(routeData);
+  const routeData = useRouteMatch('/card/:id');
+  const cardId = routeData !== null ? parseInt(routeData.params.id) : ''; //me da el id clickado
+
+  const selectCard = data.find((card) => card.id === cardId);
+  console.log(selectCard); // me devuelve el objeto clicado
 
   const filteredList = data.filter((eachCharacter) =>
     eachCharacter.name
@@ -41,21 +38,17 @@ function App() {
     <div>
       <Header handleSearch={handleSearch} dataSearch={userSearch} />
       <main className='main'>
-        {/* <Switch>
-          <Route path='/character/:id'> */}
-        <CardDetail data={userClickCharacter} />
-        {/* </Route>
-          <Route path='/' exact> */}
-        <List
-          data={filteredList}
-          userSearch={userSearch}
-          userClick={userClick}
-        />
-        {/* </Route> */}
-        {/* <Route>
-            <section>Oh! La página que estás buscando no existe</section>
+        <Switch>
+          <Route path='/card/:id'>
+            <CardDetail data={selectCard} />
           </Route>
-        </Switch> */}
+          <Route path='/' exact>
+            <List data={filteredList} userSearch={userSearch} />
+          </Route>
+          {/* <Route>
+            <section>Oh! La página que estás buscando no existe</section>
+          </Route>*/}
+        </Switch>
       </main>
     </div>
   );
