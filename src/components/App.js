@@ -1,39 +1,32 @@
 import '../styles/App.scss';
 import '../styles/List.scss';
 import { useEffect, useState } from 'react';
-import callToApi from '../services/api';
+import initialData from '../services/api';
 import Header from './Header';
+import List from './List';
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
+  const [dataSearch, setDataSearch] = useState('');
 
   useEffect(() => {
-    callToApi().then((response) => {
+    initialData().then((response) => {
       setData(response);
     });
   }, []);
 
-  const paintList = () => {
-    return data.map((eachData, index) => {
-      return (
-        <li className='list__character' key={index}>
-          <img
-            className='list__character__img'
-            src={eachData.photo}
-            alt={eachData.name}
-          />
-          <h4 className='list__character__name'>{eachData.name}</h4>
-          <p className='list__character__rest'>{eachData.species}</p>
-        </li>
-      );
-    });
+  console.log(data);
+
+  const handleSearch = (value) => {
+    console.log(value);
+    setDataSearch(value);
   };
 
   return (
-    <div className='page'>
-      <Header />
+    <div>
+      <Header handleSearch={handleSearch} dataSearch={dataSearch} />
       <main>
-        <ul className='list'>{paintList()}</ul>
+        <List data={data} />
       </main>
     </div>
   );

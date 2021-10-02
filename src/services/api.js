@@ -10,6 +10,7 @@ const callToApi = () => {
           name: character.name,
           photo: character.image,
           species: character.species,
+          id: character.id,
         };
       });
     });
