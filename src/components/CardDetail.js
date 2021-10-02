@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Card.scss';
 
 const CardDetail = (props) => {
@@ -26,6 +27,12 @@ const CardDetail = (props) => {
             </li>
             <li className='card__detail__episodes'>
               Episodios: {props.data.episodes}{' '}
+            </li>
+            <li className='CardClose'>
+              {' '}
+              <Link to='/' className='CardClose__link'>
+                Volver
+              </Link>
             </li>
           </ul>
         </article>

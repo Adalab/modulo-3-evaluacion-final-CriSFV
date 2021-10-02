@@ -10,7 +10,7 @@ import CardDetail from './CardDetail';
 function App() {
   const [data, setData] = useState([]);
   const [userSearch, setUserSearch] = useState('');
-  const [userClickCharacter, setUserClickCharacter] = useState([]);
+  // const [userClickCharacter, setUserClickCharacter] = useState([]);
 
   useEffect(() => {
     initialData().then((response) => {
@@ -26,7 +26,6 @@ function App() {
   const cardId = routeData !== null ? parseInt(routeData.params.id) : ''; //me da el id clickado
 
   const selectCard = data.find((card) => card.id === cardId);
-  console.log(selectCard); // me devuelve el objeto clicado
 
   const filteredList = data.filter((eachCharacter) =>
     eachCharacter.name
@@ -45,9 +44,9 @@ function App() {
           <Route path='/' exact>
             <List data={filteredList} userSearch={userSearch} />
           </Route>
-          {/* <Route>
+          <Route>
             <section>Oh! La página que estás buscando no existe</section>
-          </Route>*/}
+          </Route>
         </Switch>
       </main>
     </div>
