@@ -6,11 +6,11 @@ import initialData from '../services/api';
 import Header from './Header';
 import List from './List';
 import CardDetail from './CardDetail';
+import DoesNotExist from './DoesNotExist';
 
 function App() {
   const [data, setData] = useState([]);
   const [userSearch, setUserSearch] = useState('');
-  // const [userClickCharacter, setUserClickCharacter] = useState([]);
 
   useEffect(() => {
     initialData().then((response) => {
@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main className='main'>
+      <main>
         <Switch>
           <Route path='/card/:id'>
             <CardDetail data={selectCard} />
@@ -50,7 +50,7 @@ function App() {
             />
           </Route>
           <Route>
-            <section>Oh! La página que estás buscando no existe</section>
+            <DoesNotExist />
           </Route>
         </Switch>
       </main>

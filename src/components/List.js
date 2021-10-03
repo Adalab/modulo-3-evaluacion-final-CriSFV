@@ -15,15 +15,20 @@ const List = (props) => {
     );
   });
 
+  // pintar lista si existe, si no está, comentario 'no existe'
   return (
     <>
-      <form className='filter' onSubmit={hanlePrevent}>
-        <FilterName
-          handleSearch={props.handleSearch}
-          userSearch={props.userSearch}
-        />
-      </form>
-      <ul className='list'>{printList}</ul>
+      <section>
+        <form className='filter' onSubmit={hanlePrevent}>
+          <FilterName
+            handleSearch={props.handleSearch}
+            userSearch={props.userSearch}
+          />
+        </form>
+      </section>
+      <section>
+        <ul className='list'>{printList}</ul>
+      </section>
     </>
   );
 };
