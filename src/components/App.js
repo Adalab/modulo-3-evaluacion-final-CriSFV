@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div>
-      <Header handleSearch={handleSearch} dataSearch={userSearch} />
+      <Header />
       <main className='main'>
         <Switch>
           <Route path='/card/:id'>

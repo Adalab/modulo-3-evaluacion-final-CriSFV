@@ -3,6 +3,10 @@ import FilterName from './FilterName';
 import Cards from './Card';
 
 const List = (props) => {
+  const hanlePrevent = (ev) => {
+    ev.preventDefault();
+  };
+
   const printList = props.data.map((eachData) => {
     return (
       <li className='list__character' key={eachData.id}>
@@ -10,9 +14,7 @@ const List = (props) => {
       </li>
     );
   });
-  const hanlePrevent = (ev) => {
-    ev.preventDefault();
-  };
+
   return (
     <>
       <form className='filter' onSubmit={hanlePrevent}>
