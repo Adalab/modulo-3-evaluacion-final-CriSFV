@@ -1,4 +1,5 @@
 import '../styles/List.scss';
+import FilterName from './FilterName';
 import Cards from './Card';
 
 const List = (props) => {
@@ -9,9 +10,17 @@ const List = (props) => {
       </li>
     );
   });
-
+  const hanlePrevent = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <>
+      <form className='filter' onSubmit={hanlePrevent}>
+        <FilterName
+          handleSearch={props.handleSearch}
+          userSearch={props.userSearch}
+        />
+      </form>
       <ul className='list'>{printList}</ul>
     </>
   );

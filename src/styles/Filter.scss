@@ -1,0 +1,8 @@
+@import '../styles/core/variables';
+.filter {
+  text-align: center;
+  background-color: $primeColor;
+  &__input {
+    margin: 20px;
+  }
+}

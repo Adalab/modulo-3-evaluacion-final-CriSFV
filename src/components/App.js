@@ -42,7 +42,12 @@ function App() {
             <CardDetail data={selectCard} />
           </Route>
           <Route path='/' exact>
-            <List data={filteredList} userSearch={userSearch} />
+            <List
+              handleSearch={handleSearch}
+              dataSearch={userSearch}
+              data={filteredList}
+              userSearch={userSearch}
+            />
           </Route>
           <Route>
             <section>Oh! La página que estás buscando no existe</section>
