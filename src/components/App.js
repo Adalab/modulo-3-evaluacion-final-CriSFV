@@ -27,22 +27,22 @@ function App() {
 
   const selectCard = data.find((card) => card.id === cardId);
 
-  const filteredList = data.filter((eachCharacter) =>
-    eachCharacter.name
-      .toLocaleLowerCase()
-      .includes(userSearch.toLocaleLowerCase())
-  );
-
-  filteredList.sort((a, b) => {
-    if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
-      return -1;
-    }
-    if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+  const filteredList = data
+    .filter((eachCharacter) =>
+      eachCharacter.name
+        .toLocaleLowerCase()
+        .includes(userSearch.toLocaleLowerCase())
+    )
+    .sort((a, b) => {
+      if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
 
   return (
     <div>
