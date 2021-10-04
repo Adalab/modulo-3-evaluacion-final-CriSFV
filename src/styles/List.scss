@@ -4,12 +4,20 @@
   background-color: $thirdColor;
   padding: 10px;
   list-style-type: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  // @media (min-width:768px) {
+  display: grid;
+  grid-template-columns: 1fr;
 
-  // }
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+  }
+
   &__character {
     padding: 10px;
     background-color: $secondColor;

@@ -14,12 +14,12 @@
     margin: 15px;
     text-align: center;
   }
-  &__face {
-    font-size: 150px;
-    border: black 1px solid;
-    border-radius: 50%;
-    width: 50%;
-    line-height: 150px;
+  &__button {
+    margin: 15px;
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 70px;
+    background-color: $thirdColor;
     text-align: center;
   }
 }

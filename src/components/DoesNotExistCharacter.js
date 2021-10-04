@@ -1,4 +1,5 @@
 import triste from '../images/triste.jpg';
+import '../styles/DoesNotExist.scss';
 
 const DoesNotExistCharacter = () => {
   const handleClickReload = (ev) => {
@@ -8,17 +9,17 @@ const DoesNotExistCharacter = () => {
 
   return (
     <>
-      <h4 className='list__character__name '>Ohh el personaje no existe</h4>
-      <ul>
-        <li>
-          <img src={triste} alt='Triste' />
-        </li>
-        <li className=''>
-          <button className='' onClick={handleClickReload}>
-            Volver
-          </button>
-        </li>
-      </ul>
+      <section className='sad'>
+        <p className='sad__text'>
+          ¡¿¡¿No ves que el personaje que estás buscando no existe?!?!
+        </p>
+
+        <img src={triste} alt='Triste' />
+
+        <button className='sad__button' onClick={handleClickReload}>
+          Volver
+        </button>
+      </section>
     </>
   );
 };
