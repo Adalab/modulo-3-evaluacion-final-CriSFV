@@ -5,11 +5,21 @@ import DoesNotExist from './DoesNotExist';
 const CardDetail = (props) => {
   const isAlive = () => {
     if (props.data.status === 'Dead') {
-      return "I'm dead";
-    } else {
-      return "I'm alive";
+      return <i class='fas fa-skull-crossbones'></i>;
+    } else if (props.data.status === 'unknown') {
+      return <i class='far fa-question-circle'></i>;
+    } else if (props.data.status === 'Alive') {
+      return <i class='far fa-smile-wink'></i>;
     }
-  }; // poner foto muerto/vivo
+  };
+
+  const wichtSpecie = () => {
+    if (props.data.species === 'Human') {
+      return <i class='fas fa-baby'></i>;
+    } else if (props.data.species === 'Alien') {
+      return <i class='fab fa-reddit-alien'></i>;
+    }
+  };
 
   if (props.data === undefined) {
     return <DoesNotExist />;
@@ -26,12 +36,11 @@ const CardDetail = (props) => {
           <article className='card__article'>
             <h3 className='card__title'>{props.data.name}</h3>
             <ul className='card__detail'>
-              <li className='card__detail__status'>Estado: {isAlive()}</li>
               <li className='card__detail__origin'>
                 Origen: {props.data.origin}
               </li>
               <li className='card__detail__episodes'>
-                Episodios: {props.data.episodes}{' '}
+                Episodios: {props.data.episodes}
               </li>
               <li className='CardClose'>
                 <Link to='/' className='CardClose__link'>
@@ -39,6 +48,10 @@ const CardDetail = (props) => {
                 </Link>
               </li>
             </ul>
+          </article>
+          <article className='card__icons'>
+            <aside className='card__icon'>{isAlive()}</aside>
+            <aside className='card__icon'>{wichtSpecie()}</aside>
           </article>
         </section>
       </div>

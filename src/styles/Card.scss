@@ -6,7 +6,8 @@
   background-color: $secondColor;
   border-radius: 30px;
   padding: 10px;
-  margin: 0px 20px;
+  width: 350px;
+  margin: auto;
 
   @media (min-width: 768px) {
     width: 600px;
@@ -17,6 +18,14 @@
   }
   &__article {
     margin: 20px;
+  }
+  &__icons {
+    font-size: 40px;
+    @media (min-width: 768px) {
+      display: flex;
+
+      margin: 25px 0px 25px 10px;
+    }
   }
 }
 .CardClose {
@@ -33,6 +42,9 @@
   }
 }
 .div {
-  height: 100vh;
+  height: 80vh;
   background-color: $primeColor;
+}
+.fas {
+  padding: 10px;
 }
