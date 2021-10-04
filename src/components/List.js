@@ -8,8 +8,6 @@ const List = (props) => {
   const hanlePrevent = (ev) => {
     ev.preventDefault();
   };
-  //if (props.data.length === 0 ? 'no existe' : { printList });
-  console.log(props.data.length);
 
   const printList = () =>
     props.data.map((eachData) => {
