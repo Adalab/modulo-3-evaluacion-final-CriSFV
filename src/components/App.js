@@ -31,7 +31,8 @@ function App() {
     eachCharacter.name
       .toLocaleLowerCase()
       .includes(userSearch.toLocaleLowerCase())
-  );
+  ); // si no existe XXX... devuelve No exist.
+  console.log(filteredList); //si no coincide me devuelve vacio
 
   return (
     <div>

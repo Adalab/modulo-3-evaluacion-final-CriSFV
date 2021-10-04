@@ -7,7 +7,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  // @media (min-width:768px) {
 
+  // }
   &__character {
     padding: 10px;
     background-color: $secondColor;

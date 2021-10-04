@@ -6,10 +6,14 @@ const CardDetail = (props) => {
     if (props.data.status === 'Dead') {
       return "I'm dead";
     } else {
-      return "i'm alive";
+      return "I'm alive";
     }
   };
-
+  const dontExist = 'No existe';
+  if (props.data === undefined) {
+    return dontExist;
+    // con un route?. PropsData no me devuelve undefinde, me devuelve []. Si pongo []
+  }
   return (
     <>
       <section className='card'>
@@ -29,7 +33,6 @@ const CardDetail = (props) => {
               Episodios: {props.data.episodes}{' '}
             </li>
             <li className='CardClose'>
-              {' '}
               <Link to='/' className='CardClose__link'>
                 Volver
               </Link>
