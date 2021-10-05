@@ -28,7 +28,7 @@ function App() {
   };
 
   const routeData = useRouteMatch('/card/:id');
-  const cardId = routeData !== null ? parseInt(routeData.params.id) : ''; //me da el id clickado
+  const cardId = routeData !== null ? parseInt(routeData.params.id) : '';
 
   const selectCard = data.find((card) => card.id === cardId);
 

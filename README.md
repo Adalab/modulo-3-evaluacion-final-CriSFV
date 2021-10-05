@@ -1,6 +1,6 @@
-# Ejercicio de evaluación final del módulo 2 de Cristina Fernández
+# Final evaluation exercise of module 3 by Cristina Fernández
 
-Este es mi trabajo de evaluación final del módulo 3, generado con react.
+This is my final evaluation project for module 3, generated with react.
 
 ## Available Scripts
 
@@ -10,7 +10,7 @@ In the project directory, you can run:
 npm start
 ```
 
-Runs the app in the development mode.\
+This command runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\

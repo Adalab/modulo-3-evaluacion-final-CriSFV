@@ -1,8 +1,5 @@
-const callToApi = () => {
-  // Llamamos al API 'https://rickandmortyapi.com/api/character'
-  return fetch(
-    'https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json'
-  )
+const CallToApi = () => {
+  return fetch('https://rickandmortyapi.com/api/character')
     .then((response) => response.json())
     .then((response) => {
       return response.results.map((character) => {
@@ -19,4 +16,4 @@ const callToApi = () => {
     });
 };
 
-export default callToApi;
+export default CallToApi;
