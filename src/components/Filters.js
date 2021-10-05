@@ -1,5 +1,5 @@
 import FilterName from './FilterName';
-import IsAlive from './FilterAlive';
+import FilterIsAlive from './FilterAlive';
 
 const Filters = (props) => {
   return (
@@ -8,7 +8,7 @@ const Filters = (props) => {
         handleSearch={props.handleSearch}
         userSearch={props.userSearch}
       />
-      <IsAlive
+      <FilterIsAlive
         handleSearchStatus={props.handleSearchStatus}
         userSearchStatus={props.userSearchStatus}
       />

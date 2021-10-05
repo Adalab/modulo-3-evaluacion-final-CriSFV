@@ -1,24 +1,25 @@
 import { Link } from 'react-router-dom';
-import '../styles/Card.scss';
+import '../styles/CardDetail.scss';
 import DoesNotExist from './DoesNotExist';
 
 const CardDetail = (props) => {
-  const isAlive = () => {
-    if (props.data.status === 'Dead') {
-      return <i class='fas fa-skull-crossbones'></i>;
-    } else if (props.data.status === 'unknown') {
-      return <i class='far fa-question-circle'></i>;
-    } else if (props.data.status === 'Alive') {
-      return <i class='far fa-smile-wink'></i>;
-    }
-  };
-
   const wichtSpecie = () => {
     if (props.data.species === 'Human') {
       return <i class='fas fa-baby'></i>;
     } else if (props.data.species === 'Alien') {
       return <i class='fab fa-reddit-alien'></i>;
     }
+  };
+
+  const isAlive = () => {
+    if (props.data.status === 'Dead') {
+      return <i class='fas fa-skull-crossbones'></i>;
+    }
+    // else if (props.data.status === 'unknown') {
+    //   return <i class='far fa-question-circle'></i>;
+    // } else if (props.data.status === 'Alive') {
+    //   return <i class='far fa-smile-wink'></i>;
+    // }
   };
 
   if (props.data === undefined) {
@@ -39,6 +40,7 @@ const CardDetail = (props) => {
               <li className='card__detail__origin'>
                 Origen: {props.data.origin}
               </li>
+              <li>{props.data.species}</li>
               <li className='card__detail__episodes'>
                 Episodios: {props.data.episodes}
               </li>
@@ -50,8 +52,8 @@ const CardDetail = (props) => {
             </ul>
           </article>
           <article className='card__icons'>
-            <aside className='card__icon'>{isAlive()}</aside>
             <aside className='card__icon'>{wichtSpecie()}</aside>
+            <aside className='card__icon'>{isAlive()}</aside>
           </article>
         </section>
       </div>

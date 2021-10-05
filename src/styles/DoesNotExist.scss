@@ -10,16 +10,19 @@
   flex-direction: column;
   height: 100vh;
   &__text {
+    font-family: $primeFontFamily;
     font-size: 30px;
     margin: 15px;
     text-align: center;
   }
   &__button {
+    font-family: $secondFontFamily;
     margin: 15px;
     border: solid 2px black;
     border-radius: 15px;
     width: 70px;
     background-color: $thirdColor;
     text-align: center;
+    text-decoration: none;
   }
 }

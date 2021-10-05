@@ -11,7 +11,7 @@ const FilterName = (props) => {
         <input
           type='text'
           className='filter__input'
-          placeholder='busca aquí tu personaje'
+          placeholder='Busca aquí tu personaje'
           value={props.userSearch}
           onChange={inputValue}
         />

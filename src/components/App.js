@@ -1,5 +1,5 @@
 import '../styles/App.scss';
-import '../styles/List.scss';
+
 import { useEffect, useState } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import initialData from '../services/api';

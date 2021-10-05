@@ -3,6 +3,14 @@
   text-align: center;
   background-color: $primeColor;
   &__input {
+    font-family: $secondFontFamily;
     margin: 20px;
+  }
+  &__status {
+    font-family: $primeFontFamily;
+    color: $thirdColor;
+    &__select {
+      font-family: $secondFontFamily;
+    }
   }
 }
