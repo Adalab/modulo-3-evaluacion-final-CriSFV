@@ -1,5 +1,5 @@
 const callToApi = () => {
-  // Llamamos al API
+  // Llamamos al API 'https://rickandmortyapi.com/api/character'
   return fetch(
     'https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json'
   )

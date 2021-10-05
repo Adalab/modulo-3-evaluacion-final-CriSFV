@@ -1,8 +1,8 @@
 import '../styles/List.scss';
-import FilterName from './FilterName';
+
 import Cards from './Card';
 import DoesNotExistCharacter from './DoesNotExistCharacter';
-//import IsAlive from './FilterAlive';
+import Filters from './Filters';
 
 const List = (props) => {
   const hanlePrevent = (ev) => {
@@ -29,11 +29,12 @@ const List = (props) => {
     <>
       <section>
         <form className='filter' onSubmit={hanlePrevent}>
-          <FilterName
+          <Filters
             handleSearch={props.handleSearch}
             userSearch={props.userSearch}
+            handleSearchStatus={props.handleSearchStatus}
+            userSearchStatus={props.userSearchStatus}
           />
-          {/* <IsAlive /> */}
         </form>
       </section>
       <section>

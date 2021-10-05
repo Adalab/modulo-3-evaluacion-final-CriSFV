@@ -11,6 +11,7 @@ import DoesNotExist from './DoesNotExist';
 function App() {
   const [data, setData] = useState([]);
   const [userSearch, setUserSearch] = useState('');
+  const [userSearchStatus, setUserSearchStatus] = useState('all');
 
   useEffect(() => {
     initialData().then((response) => {
@@ -20,6 +21,10 @@ function App() {
 
   const handleSearch = (value) => {
     setUserSearch(value);
+  };
+
+  const handleSearchStatus = (value) => {
+    setUserSearchStatus(value);
   };
 
   const routeData = useRouteMatch('/card/:id');
@@ -32,6 +37,11 @@ function App() {
       eachCharacter.name
         .toLocaleLowerCase()
         .includes(userSearch.toLocaleLowerCase())
+    )
+
+    .filter(
+      (eachCharacter) =>
+        userSearchStatus === 'all' || userSearchStatus === eachCharacter.status
     )
     .sort((a, b) => {
       if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
@@ -58,6 +68,8 @@ function App() {
               dataSearch={userSearch}
               data={filteredList}
               userSearch={userSearch}
+              handleSearchStatus={handleSearchStatus}
+              userSearchStatus={userSearchStatus}
             />
           </Route>
           <Route>

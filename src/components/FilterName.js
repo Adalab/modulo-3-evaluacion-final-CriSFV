@@ -6,13 +6,17 @@ const FilterName = (props) => {
   };
 
   return (
-    <input
-      type='text'
-      className='filter__input'
-      placeholder='busca aquí tu personaje'
-      value={props.userSearch}
-      onChange={inputValue}
-    />
+    <>
+      <label>
+        <input
+          type='text'
+          className='filter__input'
+          placeholder='busca aquí tu personaje'
+          value={props.userSearch}
+          onChange={inputValue}
+        />
+      </label>
+    </>
   );
 };
 export default FilterName;
