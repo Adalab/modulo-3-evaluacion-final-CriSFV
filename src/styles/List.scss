@@ -37,8 +37,11 @@
 
     &__img {
       margin: 5px;
-      width: 150px;
+      width: 100px;
       border-radius: 25px;
+      @media (min-width: 768px) {
+        width: 150px;
+      }
     }
   }
 }

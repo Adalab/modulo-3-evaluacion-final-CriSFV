@@ -5,21 +5,16 @@ import DoesNotExist from './DoesNotExist';
 const CardDetail = (props) => {
   const wichtSpecie = () => {
     if (props.data.species === 'Human') {
-      return <i class='fas fa-baby'></i>;
+      return <i className='fas fa-baby'></i>;
     } else if (props.data.species === 'Alien') {
-      return <i class='fab fa-reddit-alien'></i>;
+      return <i className='fab fa-reddit-alien'></i>;
     }
   };
 
   const isAlive = () => {
     if (props.data.status === 'Dead') {
-      return <i class='fas fa-skull-crossbones'></i>;
+      return <i className='fas fa-skull-crossbones'></i>;
     }
-    // else if (props.data.status === 'unknown') {
-    //   return <i class='far fa-question-circle'></i>;
-    // } else if (props.data.status === 'Alive') {
-    //   return <i class='far fa-smile-wink'></i>;
-    // }
   };
 
   if (props.data === undefined) {
@@ -37,13 +32,9 @@ const CardDetail = (props) => {
           <article className='card__article'>
             <h3 className='card__title'>{props.data.name}</h3>
             <ul className='card__detail'>
-              <li className='card__detail__origin'>
-                Origen: {props.data.origin}
-              </li>
+              <li>Origen: {props.data.origin}</li>
               <li>{props.data.species}</li>
-              <li className='card__detail__episodes'>
-                Episodios: {props.data.episodes}
-              </li>
+              <li>Episodios: {props.data.episodes}</li>
               <li className='CardClose'>
                 <Link to='/' className='CardClose__link'>
                   Volver

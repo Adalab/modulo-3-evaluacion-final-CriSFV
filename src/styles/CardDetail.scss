@@ -3,14 +3,18 @@
 .card {
   font-family: $primeFontFamily;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: $secondColor;
   border-radius: 30px;
   padding: 10px;
-  width: 380px;
+  width: 250px;
+  height: fit-content;
   margin: auto;
 
   @media (min-width: 768px) {
+    flex-direction: row;
     width: 600px;
     margin: auto;
   }
@@ -23,9 +27,8 @@
   }
   &__icons {
     font-size: 40px;
+    display: flex;
     @media (min-width: 768px) {
-      display: flex;
-
       margin: 25px 0px 25px 10px;
     }
   }
@@ -38,7 +41,7 @@
   text-align: center;
   border-radius: 15px;
   background-color: $thirdColor;
-  margin-top: 5px;
+  margin-top: 15px;
   &__link {
     padding: 15px;
     text-decoration: none;
