@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import FilterName from './FilterName';
 import FilterIsAlive from './FilterAlive';
 
@@ -14,5 +15,11 @@ const Filters = (props) => {
       />
     </>
   );
+};
+Filters.propTypes = {
+  userSearch: PropTypes.string,
+  userSearchStatus: PropTypes.string,
+  handleSearch: PropTypes.func.isRequired,
+  handleSearchStatus: PropTypes.func.isRequired,
 };
 export default Filters;

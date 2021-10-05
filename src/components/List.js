@@ -1,5 +1,5 @@
 import '../styles/List.scss';
-
+import PropTypes from 'prop-types';
 import Cards from './Card';
 import DoesNotExistCharacter from './DoesNotExistCharacter';
 import Filters from './Filters';
@@ -43,5 +43,11 @@ const List = (props) => {
     </>
   );
 };
-
+List.propTypes = {
+  data: PropTypes.array,
+  userSearch: PropTypes.string,
+  userSearchStatus: PropTypes.string,
+  handleSearch: PropTypes.func.isRequired,
+  handleSearchStatus: PropTypes.func.isRequired,
+};
 export default List;

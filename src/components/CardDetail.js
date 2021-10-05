@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../styles/CardDetail.scss';
 import DoesNotExist from './DoesNotExist';
@@ -50,5 +51,8 @@ const CardDetail = (props) => {
       </div>
     </>
   );
+};
+CardDetail.propTypes = {
+  data: PropTypes.object,
 };
 export default CardDetail;

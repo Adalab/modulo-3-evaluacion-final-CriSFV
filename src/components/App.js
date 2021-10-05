@@ -65,7 +65,6 @@ function App() {
           <Route path='/' exact>
             <List
               handleSearch={handleSearch}
-              dataSearch={userSearch}
               data={filteredList}
               userSearch={userSearch}
               handleSearchStatus={handleSearchStatus}

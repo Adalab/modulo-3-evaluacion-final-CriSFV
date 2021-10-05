@@ -1,4 +1,5 @@
 import '../styles/Filter.scss';
+import PropTypes from 'prop-types';
 
 const FilterName = (props) => {
   const inputValue = (ev) => {
@@ -18,5 +19,9 @@ const FilterName = (props) => {
       </label>
     </>
   );
+};
+FilterName.propTypes = {
+  userSearch: PropTypes.string,
+  handleSearch: PropTypes.func.isRequired,
 };
 export default FilterName;

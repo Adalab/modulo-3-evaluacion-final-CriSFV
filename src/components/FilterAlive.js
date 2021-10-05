@@ -1,4 +1,6 @@
 import '../styles/Filter.scss';
+import PropTypes from 'prop-types';
+
 const FilterisAlive = (props) => {
   const optionValue = (ev) => {
     props.handleSearchStatus(ev.currentTarget.value);
@@ -22,5 +24,9 @@ const FilterisAlive = (props) => {
       </label>
     </>
   );
+};
+FilterisAlive.propTypes = {
+  userSearchStatus: PropTypes.string,
+  handleSearchStatus: PropTypes.func.isRequired,
 };
 export default FilterisAlive;
