@@ -7,6 +7,7 @@ import Header from './Header';
 import List from './List';
 import CardDetail from './CardDetail';
 import DoesNotExist from './DoesNotExist';
+import Filters from './Filters';
 
 function App() {
   const [data, setData] = useState([]);
@@ -14,10 +15,14 @@ function App() {
   const [userSearchStatus, setUserSearchStatus] = useState('all');
 
   useEffect(() => {
-    initialData().then((response) => {
+    initialData.CallToApi().then((response) => {
       setData(response);
     });
   }, []);
+
+  const hanlePrevent = (ev) => {
+    ev.preventDefault();
+  };
 
   const handleSearch = (value) => {
     setUserSearch(value);
@@ -63,6 +68,16 @@ function App() {
             <CardDetail data={selectCard} />
           </Route>
           <Route path='/' exact>
+            <section>
+              <form className='filter' onSubmit={hanlePrevent}>
+                <Filters
+                  handleSearch={handleSearch}
+                  userSearch={userSearch}
+                  handleSearchStatus={handleSearchStatus}
+                  userSearchStatus={userSearchStatus}
+                />
+              </form>
+            </section>
             <List
               handleSearch={handleSearch}
               data={filteredList}
